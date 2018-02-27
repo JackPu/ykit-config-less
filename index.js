@@ -47,12 +47,12 @@ module.exports = {
 
       var noExtract = require.resolve('style-loader') + '!' + loaderString
       switch (extractOption) {
-          case 'auto':
-              return self.env === 'local' ? noExtract : extract
-          case 'always':
-              return extract
-          case 'never':
-              return noExtract
+        case 'auto':
+          return self.env === 'local' ? noExtract : extract
+        case 'never':
+          return noExtract
+        default:
+          return extract
       }
     }
   }
